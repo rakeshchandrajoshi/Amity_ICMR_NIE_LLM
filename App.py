@@ -11,7 +11,7 @@ st.set_page_config(page_title="Virus Prediction App", layout="centered")
 # Load model and tokenizer
 @st.cache_resource
 def load_model_and_tokenizer():
-    model_path = r"Z:\Medical LLM\bio_clinicalbert_clf"
+    model_path = "Downloads/rrrr"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = AutoModelForSequenceClassification.from_pretrained(model_path)
     model.eval()
@@ -119,4 +119,5 @@ if submitted:
     st.markdown("### 🎯 Top-5 Predicted Viruses")
     for i, (label, score) in enumerate(predictions, 1):
         st.markdown(f"**{i}. {label}** — Confidence: `{score:.2%}`")
+
 
